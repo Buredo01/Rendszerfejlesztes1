@@ -1,0 +1,272 @@
+body{
+    background-color: #DDBEA9;
+}
+
+nav {
+    background-color: #F5EBE0;
+}
+
+h1 {
+    color: #191410;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.hero-section {
+    height: 100vh;
+    background-image: url('img/hero/hero.jpg'); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 100px 0px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .hero-content {
+    max-width: 600px;
+  }
+  .hero-section h1 {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    color: #F5EBE0;
+  }
+  .hero-section p {
+    font-size: 1.25rem;
+    margin-bottom: 20px;
+    color: #F5EBE0;
+  }
+
+    /* ******************************** */
+
+    /* Gomb */
+    .btn {
+      background-color: #7F5539;
+      color: white;
+      border: none;
+    }
+
+    .btn:hover {
+        background-color: #9C6644;
+        color: white;
+      }
+
+  .features-section {
+    padding: 50px 0;
+  }
+  .testimonial-section {
+    background-color: #f1f1f1;
+    padding: 50px 0;
+  }
+
+  /* ******************************** */
+  
+
+
+  /* Kosár */
+.kosar-container {
+    margin: 50px auto;
+    padding:20px;
+    max-width: 800px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.kosar-container h2 {
+  color: #343a40;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.kosar-table {
+  width: 100%;
+  margin-top: 20px;
+  border-collapse: collapse;
+}
+
+.kosar-table thead th {
+  background-color: #343a40;
+  color: #ffffff;
+  padding: 12px;
+  text-align: left;
+  font-weight: 600;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+}
+
+.kosar-table tbody tr:nth-child(even) {
+  background-color: #f1f1f1;
+}
+
+.kosar-table tbody tr:nth-child(odd) {
+  background-color: #ffffff;
+}
+
+.kosar-table th, .kosar-table td {
+  padding: 10px;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.kosar-table tbody tr:hover {
+  background-color: #e9ecef;
+}
+
+.kosar-table td {
+  color: #495057;
+}
+
+.kosar-button-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+
+.kosar-button {
+  background-color: #343a40;
+  color: #ffffff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.kosar-button:hover {
+  background-color: #495057;
+}
+.remove-button {
+  background-color: #dc3545;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.remove-button:hover {
+  background-color: #c82333;
+}
+
+/* ************************************** */
+
+.imputgomb {
+  background-color: #7F5539;
+  color: white;
+  border: none;
+}
+
+.imputgomb:hover {
+  background-color: #9C6644;
+  color: white;
+}
+
+/********************************************/
+/* Profil */
+
+.egesz{
+  max-width: 500px;
+  margin: 50px auto;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #F5EBE0;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.all{
+  width: 100%;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #F5EBE0;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.profil, .rendelesek, .kivansag, .jogmodositas, .torles, .adminok, .moderatorok {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.velemeny{
+  margin-bottom: 20px;
+}
+
+.profil h2 {
+  margin: 0;
+}
+
+.profilkep {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+}
+
+.kijelentkezesgomb{
+  background-color: #7F5539;
+  color: #F5EBE0;
+  cursor: pointer;
+  width: 50%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+.kijelentkezesgomb{
+  background-color: #7F5539;
+  color: #F5EBE0;
+  cursor: pointer;
+  width: 50%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+.profiltorrles{
+  background-color: red;
+  color: #F5EBE0;
+  cursor: pointer;
+  width: 30%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+.kijelentkezesgomb:hover{
+  background-color: #9C6644;
+  color: white;
+}
+.nev{
+  color: #7F5539;
+}
+/* ************************************** */
+#kosarpopup{
+  display: none;
+  position: fixed;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  border: 2px solid black;
+  padding: 50px; 
+  z-index: 5;
+}
+#kosarpopup-overlay{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 4;
+  display: none;
+}
+

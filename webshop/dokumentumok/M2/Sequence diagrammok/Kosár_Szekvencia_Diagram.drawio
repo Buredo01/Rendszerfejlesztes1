@@ -1,0 +1,138 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:131.0) Gecko/20100101 Firefox/131.0" version="24.8.0">
+  <diagram name="Page-1" id="2YBvvXClWsGukQMizWep">
+    <mxGraphModel dx="1050" dy="558" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="aM9ryv3xv72pqoxQDRHE-1" value="&lt;div&gt;Könyv View&lt;br&gt;&lt;/div&gt;" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=0;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;elbow&quot;:&quot;vertical&quot;,&quot;curved&quot;:0,&quot;rounded&quot;:0};" parent="1" vertex="1">
+          <mxGeometry x="159" y="30" width="100" height="491" as="geometry" />
+        </mxCell>
+        <mxCell id="aM9ryv3xv72pqoxQDRHE-2" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;elbow&quot;:&quot;vertical&quot;,&quot;curved&quot;:0,&quot;rounded&quot;:0};" parent="aM9ryv3xv72pqoxQDRHE-1" vertex="1">
+          <mxGeometry x="45" y="70" width="10" height="350" as="geometry" />
+        </mxCell>
+        <mxCell id="aM9ryv3xv72pqoxQDRHE-3" value="Könyv megnyitása" style="html=1;verticalAlign=bottom;startArrow=oval;endArrow=block;startSize=8;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;" parent="aM9ryv3xv72pqoxQDRHE-1" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-70" y="69" as="sourcePoint" />
+            <mxPoint x="45" y="69" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="aM9ryv3xv72pqoxQDRHE-5" value="Kosár Controller" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=0;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;elbow&quot;:&quot;vertical&quot;,&quot;curved&quot;:0,&quot;rounded&quot;:0};" parent="1" vertex="1">
+          <mxGeometry x="334" y="51" width="100" height="499" as="geometry" />
+        </mxCell>
+        <mxCell id="aM9ryv3xv72pqoxQDRHE-6" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;elbow&quot;:&quot;vertical&quot;,&quot;curved&quot;:0,&quot;rounded&quot;:0};" parent="aM9ryv3xv72pqoxQDRHE-5" vertex="1">
+          <mxGeometry x="46" y="60" width="10" height="360" as="geometry" />
+        </mxCell>
+        <mxCell id="Q0z_LshVRIAhm5La_Bbn-19" value="hiba(Jelentkezzen be)" style="html=1;align=left;spacingLeft=2;endArrow=block;rounded=0;edgeStyle=orthogonalEdgeStyle;curved=0;rounded=0;" edge="1" parent="aM9ryv3xv72pqoxQDRHE-5" source="aM9ryv3xv72pqoxQDRHE-6" target="aM9ryv3xv72pqoxQDRHE-6">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="61" y="319" as="sourcePoint" />
+            <Array as="points">
+              <mxPoint x="101" y="329" />
+              <mxPoint x="101" y="350" />
+            </Array>
+            <mxPoint x="68" y="349" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Q0z_LshVRIAhm5La_Bbn-23" value="&lt;div&gt;hiba(Nincs&amp;nbsp;&lt;/div&gt;&lt;div&gt;raktáron)&lt;/div&gt;" style="html=1;align=left;spacingLeft=2;endArrow=block;rounded=0;edgeStyle=orthogonalEdgeStyle;curved=0;rounded=0;" edge="1" parent="aM9ryv3xv72pqoxQDRHE-5" source="aM9ryv3xv72pqoxQDRHE-6" target="aM9ryv3xv72pqoxQDRHE-6">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="70" y="369" as="sourcePoint" />
+            <Array as="points">
+              <mxPoint x="100" y="369" />
+              <mxPoint x="100" y="399" />
+            </Array>
+            <mxPoint x="70" y="399" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="aM9ryv3xv72pqoxQDRHE-8" value="&lt;div&gt;Visszajelzés a sikeres&lt;/div&gt;&lt;div&gt;kosárba helyezésről&lt;/div&gt;" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;labelBackgroundColor=none;" parent="1" source="aM9ryv3xv72pqoxQDRHE-6" target="aM9ryv3xv72pqoxQDRHE-2" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="351.5" y="291" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="360" y="328" />
+            </Array>
+            <mxPoint x="450" y="291" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Q0z_LshVRIAhm5La_Bbn-1" value="&lt;div&gt;Felhasználó&lt;/div&gt;" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;labelBackgroundColor=none;" vertex="1" parent="1">
+          <mxGeometry x="60" y="60" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Q0z_LshVRIAhm5La_Bbn-9" value="Érvényes adatok" style="shape=umlFrame;whiteSpace=wrap;html=1;pointerEvents=0;" vertex="1" parent="1">
+          <mxGeometry x="40" y="150" width="730" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="Q0z_LshVRIAhm5La_Bbn-10" value="&lt;div&gt;Érvénytelen adat&lt;/div&gt;" style="shape=umlFrame;whiteSpace=wrap;html=1;pointerEvents=0;" vertex="1" parent="1">
+          <mxGeometry x="40" y="350" width="730" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="Q0z_LshVRIAhm5La_Bbn-11" value="Kosár DAO" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=0;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;elbow&quot;:&quot;vertical&quot;,&quot;curved&quot;:0,&quot;rounded&quot;:0};" vertex="1" parent="1">
+          <mxGeometry x="499" y="51" width="100" height="469" as="geometry" />
+        </mxCell>
+        <mxCell id="Q0z_LshVRIAhm5La_Bbn-12" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;elbow&quot;:&quot;vertical&quot;,&quot;curved&quot;:0,&quot;rounded&quot;:0};" vertex="1" parent="Q0z_LshVRIAhm5La_Bbn-11">
+          <mxGeometry x="45" y="117" width="10" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="Q0z_LshVRIAhm5La_Bbn-22" value="&lt;div&gt;Kosár létrehozása&lt;/div&gt;" style="html=1;align=left;spacingLeft=2;endArrow=block;rounded=0;edgeStyle=orthogonalEdgeStyle;curved=0;rounded=0;" edge="1" parent="Q0z_LshVRIAhm5La_Bbn-11" source="Q0z_LshVRIAhm5La_Bbn-12" target="Q0z_LshVRIAhm5La_Bbn-12">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="93" y="139" as="sourcePoint" />
+            <Array as="points">
+              <mxPoint x="126" y="139" />
+              <mxPoint x="126" y="169" />
+            </Array>
+            <mxPoint x="99.5" y="169" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Q0z_LshVRIAhm5La_Bbn-13" value="kosár létrehozása" style="html=1;verticalAlign=bottom;endArrow=block;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;" edge="1" parent="1" source="aM9ryv3xv72pqoxQDRHE-6" target="Q0z_LshVRIAhm5La_Bbn-12">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="364" y="235" as="sourcePoint" />
+            <Array as="points">
+              <mxPoint x="447" y="235" />
+            </Array>
+            <mxPoint x="512" y="235" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Q0z_LshVRIAhm5La_Bbn-18" value="Munkamenet ellenőrzés" style="html=1;align=left;spacingLeft=2;endArrow=block;rounded=0;edgeStyle=orthogonalEdgeStyle;curved=0;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="390" y="114" as="sourcePoint" />
+            <Array as="points">
+              <mxPoint x="420" y="144" />
+            </Array>
+            <mxPoint x="395" y="144" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Q0z_LshVRIAhm5La_Bbn-20" value="&lt;div&gt;Visszajelzés a&amp;nbsp;&lt;/div&gt;&lt;div&gt;sikeres létrehozásról&lt;/div&gt;" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;labelBackgroundColor=none;" edge="1" parent="1" source="Q0z_LshVRIAhm5La_Bbn-12" target="aM9ryv3xv72pqoxQDRHE-6">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="362" y="278" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="457" y="278" />
+            </Array>
+            <mxPoint x="512" y="278" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Q0z_LshVRIAhm5La_Bbn-21" value="&lt;div&gt;hiba(A könyv nem&lt;/div&gt;&lt;div&gt;jeleníthető meg)&lt;/div&gt;" style="html=1;align=left;spacingLeft=2;endArrow=block;rounded=0;edgeStyle=orthogonalEdgeStyle;curved=0;rounded=0;entryX=0.6;entryY=0.914;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" target="aM9ryv3xv72pqoxQDRHE-2">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="214" y="390" as="sourcePoint" />
+            <Array as="points">
+              <mxPoint x="244" y="390" />
+              <mxPoint x="244" y="420" />
+            </Array>
+            <mxPoint x="219" y="420" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Q0z_LshVRIAhm5La_Bbn-24" value="&lt;div&gt;Könyvkészlet&amp;nbsp;&lt;/div&gt;&lt;div&gt;ellenőrzése&lt;/div&gt;" style="html=1;align=left;spacingLeft=2;endArrow=block;rounded=0;edgeStyle=orthogonalEdgeStyle;curved=0;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="390" y="160" as="sourcePoint" />
+            <Array as="points">
+              <mxPoint x="425" y="160" />
+              <mxPoint x="425" y="190" />
+            </Array>
+            <mxPoint x="395" y="190" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Q0z_LshVRIAhm5La_Bbn-29" value="kosárba helyezés" style="html=1;verticalAlign=bottom;endArrow=block;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;" edge="1" parent="1" source="aM9ryv3xv72pqoxQDRHE-2" target="aM9ryv3xv72pqoxQDRHE-6">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="264" y="190" as="sourcePoint" />
+            <Array as="points">
+              <mxPoint x="349" y="190" />
+            </Array>
+            <mxPoint x="375" y="190" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

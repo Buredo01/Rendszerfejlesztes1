@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="hun">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap/bootstrap.css"/>
+    <link rel="stylesheet" href="style.css"/>
+    <title>Könyvesbolt</title>
+</head>
+<body>
+
+  <%- include('./ui/fejlec.ejs') %>
+
+  <div class="container">
+        <div class="row gx-5">
+            <div class="col">
+                <h1 style="margin-top: 20px; display: flex; flex-direction: column; align-items: center;">Adatok módosítása</h1>
+                <form style = "display: flex; flex-direction: column; align-items: center;" action="/adatokszerkesztese_update" method="POST">
+
+                    <label for="username" style="display: block; margin: 10px 0;"></label>
+                    <input type="username" id="username" name="username" value="<%= user.nev %>" style="width: 50%; padding: 10px; border: 1px solid #ccc; border-radius: 5px;" required placeholder="<%= user.nev %>">
+                    
+                    <label for="email" style="display: block; margin: 10px 0;"></label>
+                    <input type="email" id="email" name="email" value="<%= user.email %>" style="width: 50%; padding: 10px; border: 1px solid #ccc; border-radius: 5px;" required placeholder="<%= user.email %>">
+
+                    <label for="password" style="display: block; margin: 10px 0;"></label>
+                    <input type="password" id="password" name="password" value="" style="width: 50%; padding: 10px; border: 1px solid #ccc; border-radius: 5px;" required placeholder="Jelszó">
+
+                    <input class="imputgomb" type="submit" value="Mentés" style="width: 50%; padding: 10px; border: none; border-radius: 5px; cursor: pointer; margin-top: 20px; margin-bottom: 20px;">
+                    <!--<div class="alert alert-danger" style = "width: 50%;" role="alert">Adatok módosítása sikertelen!</div>-->
+                </form> 
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

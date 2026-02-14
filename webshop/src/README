@@ -1,0 +1,8 @@
+# Alap projekt
+
+## Használat
+Elsőnek terminálban be kell mennetek a "src" mappába és utána a projektet a *npm start*-al tudjátok futtatni. Elvileg minden függőséget fel kell, hogy telepítsen magától.
+Ha elindult akkor (http://localhost:3000) címen el lehet érni és egy oldalnak kell, hogy be jöjjön.
+
+## Leállítás
+Terminálban elsőnek nyomni kell egy CTRL+C-t majd uána egy y-t.

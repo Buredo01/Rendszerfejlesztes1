@@ -1,0 +1,98 @@
+.konyv_container{
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: space-around;
+    align-items: center;
+
+    padding: 1vw;
+    margin: 1vw;
+}
+
+h3{
+    width: 100%;
+    text-align: center;
+    text-decoration: underline;
+}
+
+h4{
+    width: 100%;
+    text-align: center;
+}
+
+.konyv_borito{
+    background-color: #c9ac99;
+    border: 1px solid black;
+    border-radius: 15px;
+    width: 40%;
+    height: 35vw;
+    overflow: hidden;
+}
+
+.konyv_borito img{
+    width: 100%;
+    height: 100%;
+}
+
+.konyv_adatok{
+    background-color: #c9ac99;
+    width: 55%;
+    min-height: 35vw;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    padding: 2vw;
+    border: 1px solid black;
+    border-radius: 15px;
+}
+
+.konyv_adat{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.adat{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 0 10vw;
+}
+
+.konyv_kosar{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+}
+
+.kosar_form{
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+}
+
+.kosar_form input{
+    width: 5vw;
+    padding: 0.5vw;
+    text-align: center;
+    margin-right: 0.5vw;
+}
+
+.konyv_ertekelesek{
+    background-color: #c9ac99;
+    width: 94%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto;
+    padding: 2vw;
+    border: 1px solid black;
+    border-radius: 15px;
+}
+
+.ertekeles{
+    margin: auto;
+}

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="hun">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap/bootstrap.css"/>
+    <link rel="stylesheet" href="style.css"/>
+    <title>Könyvesbolt</title>
+</head>
+<body>
+  <%- include('./ui/fejlec.ejs') %>
+
+  <!-- Hero -->
+  <section class="hero-section">
+    <div class="container">
+      <h1>Üdvözlünk a könyvesboltunkban!</h1>
+      <p class="lead">Élményekben és könyvekben gazdag vásárlást kívánunk!</p>
+      <a href="/konyveink" class="btn btn-lg">Vásárlás</a>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="features-section text-center">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <i class="bi bi-lightning-charge" style="font-size: 3rem;"></i>
+          <h3>Több mint</h3>
+          <h3>50 +</h3>
+          <h3>a kínálatunkban</h3>
+        </div>
+        <div class="col-md-4">
+          <i class="bi bi-shield-check" style="font-size: 3rem;"></i>
+          <h3>Gyors szállítási</h3>
+          <h3>lehetőségek</h3>
+        </div>
+        <div class="col-md-4">
+          <i class="bi bi-phone" style="font-size: 3rem;"></i>
+          <h3>Biztonságos vásárlási</h3>
+          <h3>és fizetési lehetőségek</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>

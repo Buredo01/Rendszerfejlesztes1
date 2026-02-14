@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="hun">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap/bootstrap.css"/>
+    <link rel="stylesheet" href="/style.css"/>    
+    <title>Könyvesbolt</title>
+
+    <script src="js/jquery/jquery.js"></script>
+</head>
+<body>
+  <%- include('./ui/modal.ejs') %>
+  <%- include('./ui/fejlec.ejs') %> 
+  
+      <div class="container">
+        <div class="row gx-5">
+            <div class="col">
+                <h1 style="margin-top: 20px; display: flex; flex-direction: column; align-items: center;">Könyv módosítása</h1>
+                <form style = "display: flex; flex-direction: column; align-items: center;" enctype="multipart/form-data">
+                    <input type="hidden" id="old_isbn" value="<%= konyv.isbn %>">  
+
+                    <label for="text" style="display: block; margin: 10px 0;"></label>
+                    <input type="text" id="cim" name="cim" style="width: 50%; padding: 10px; border: 1px solid #ccc; border-radius: 5px;" required placeholder="Címe" value="<%= konyv.cim %>"">
+                    <div class="alert alert-danger" id="title_error" style = "width: 50%;" role="alert"></div>
+    
+                    <label for="text" style="display: block; margin: 10px 0; "></label>
+                    <input type="text" id="szerzo" name="szerzo" style="width: 50%; padding: 10px; border: 1px solid #ccc; border-radius: 5px;" required placeholder="Szerzője" value="<%= konyv.szerzo %>">
+                    <div class="alert alert-danger" id="writers_error" style = "width: 50%;" role="alert"></div>
+    
+                    <label for="number" style="display: block; margin: 10px 0;"></label>
+                    <input type="number" id="isbn" name="isbn" style="width: 50%; padding: 10px; border: 1px solid #ccc; border-radius: 5px;" required placeholder="ISBN száma" value="<%= konyv.isbn %>">
+                    <div class="alert alert-danger" id="isbn_error" style = "width: 50%;" role="alert"></div>
+                    <!--
+                    <div class="row gx-3" style="margin-bottom: 50px;">
+                      <div class="col-6">
+                        <div style="overflow: scroll; scrollbar-width: thin; height: 70%;">
+                          <% mufajok.mufajok.forEach((e) => { %>
+                            <div class="form-check">
+                              <input type="checkbox" name="mufajok" class="form-check-input" value=<%= e.id %>>
+                              <label><%= e.megnevezes %></label>
+                            </div>
+                          <% }); %>
+                        </div>
+                      </div>
+                      
+                      <div class="col-6">
+                        <label for="text" style="display: block; margin: 10px 0;"></label>
+                        <input type="text" id="mufaj" name="mufaj" style="width: 140%; padding: 10px; border: 1px solid #ccc; border-radius: 5px;" required placeholder="Műfaja">    
+                      </div>
+                    </div>
+                    -->
+                    <!--
+                    
+                    <div class="form-check">
+                      <input type="checkbox" id="publisher_check" class="form-check-input">
+                      <label class="form-check-label" for="publisher_check">Szerepel e a listában?</label>
+                    </div>
+                    <div class="row" style="width: 52%;">
+                      <div class="col-6">
+                        <label for="text" style="display: block; margin: 10px 0;"></label>
+                        <select name="" id="" style="width: 100%; padding: 10px;">
+                          <option value="">Válassz kiadót</option>
+                        </select>
+                      </div>
+                      <div class="col-6">
+                        <label for="text" style="display: block; margin: 10px 0;"></label>
+                        <input type="text" id="kiado" name="kiado" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px;" required placeholder="Kiadója" value="<%= kiado %>">
+                        <div class="alert alert-danger" id="publisher_error" style = "width: 50%;" role="alert"></div>
+                      </div>
+                    </div>-->
+
+                    <label for="number" style="display: block; margin: 10px 0;"></label>
+                    <input type="number" id="ar" name="ar" style="width: 50%; padding: 10px; border: 1px solid #ccc; border-radius: 5px;" required placeholder="Ára" value="<%= konyv.ar %>">
+                    <div class="alert alert-danger" id="price_error" style = "width: 50%;" role="alert"></div>
+                    
+                    <label for="number" style="display: block; margin: 10px 0;"></label>
+                    <input type="number" id="kiadas" name="kiadas" style="width: 50%; padding: 10px; border: 1px solid #ccc; border-radius: 5px;" required placeholder="Kiadás éve" value="<%= konyv.megjelenesEve %>">
+                    <div class="alert alert-danger" id="release_error" style = "width: 50%;" role="alert"></div>
+                    
+                    <textarea class="form-control" id="leiras" aria-label="With textarea" style="width: 50%; padding: 10px; border: 1px solid #ccc; border-radius: 5px; margin-top: 20px;" required placeholder="Leírás"><%= konyv.leiras %></textarea>
+                    <div class="alert alert-danger" id="description_error" style = "width: 50%;" role="alert"></div>
+
+                    <label for="number" style="display: block; margin: 10px 0;"></label>
+                    <input type="number" id="piece" name="piece" style="width: 50%; padding: 10px; border: 1px solid #ccc; border-radius: 5px;" required placeholder="darab száma" value="<%= konyv.darab %>">
+                    <div class="alert alert-danger" id="piece_error" style = "width: 50%;" role="alert"></div>
+
+
+                    <label for="file" style="display: block; margin: 10px 0;"></label>
+                    <input class="form-control form-control-sm" id="formFileSm"  style="width: 50%" type="file">
+                    <div class="alert alert-danger" id="cover_error" style = "width: 50%;" role="alert"></div>
+
+                    <input class="imputgomb" type="submit" value="Könyv frissítése" style="width: 50%; padding: 10px; border: none; border-radius: 5px; cursor: pointer; margin-top: 20px; margin-bottom: 20px;">
+              
+                </form> 
+            </div>
+        </div>
+    </div>
+
+    <script src="js/checkBookData.js"></script>
+    <script src="js/updateBookData.js"></script>
+</body>
+</html>

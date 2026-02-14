@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="hun">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap/bootstrap.css"/>
+    <link rel="stylesheet" href="style.css"/>
+    <title>Könyvesbolt</title>
+</head>
+<body>
+  <%- include('./ui/fejlec.ejs') %>
+  <%- include('./ui/kosarmodal.ejs') %>
+
+
+  <div class="container-fluid"> 
+    <h1>Könyveink</h1> 
+    
+    <div class="d-flex flex-column"> 
+      <div class="d-flex justify-content-between align-items-center mt-3"> 
+        <form class="d-flex align-items-center" style="width: 30%;" role="search" action="/szurtKonyvek"> 
+
+          <h3 style="margin-right: 10px;">Szűrő:</h3>
+          <input class="form-control me-2" type="search" id="searchFilter" name="searchFilter" placeholder="Keresési feltétel" aria-label="Keresés"> 
+          
+          <select id="searchCriteria" name="searchCrit" style="padding: 6px 10px; border: 1px solid #ccc; border-radius: 5px; margin-right: 10px;"> 
+            <option value="searchByName">Cím</option> 
+            <option value="searchByAuthor">Szerző</option> 
+            <option value="searchByGenre">Műfaj</option> 
+            <option value="searchByPublisher">Kiadó</option> 
+            <option value="searchByDate">Kiadás éve</option>
+          </select>
+          <button class="btn btn-outline-secondary me-2" type="submit">Szűrés</button>  
+        </form> 
+        
+        <% if(isAuthenticated && user.pozicio_id != 1){%>
+          <a href='/ujkonyv' class='btn btn-secondary'>+ Új könyv hozzáadása</a> 
+        <% } %>
+      </div> 
+    </div> 
+
+    
+    <div class="container" style="margin-top: 50px;">
+      <div class="row">
+        <% if(konyvek.length > 0) { %>
+
+              <% for(let i = 0; i < konyvek.length; i++) { %>
+                  <div class="col-md-3" style="margin-top: 10px; margin-bottom: 50px;">
+                      <div class="card" style="width: 18rem;">
+                          <img src="<%= konyvek[i].borito %>" class="card-img-top" alt="A képhez nem jeleníthető meg kép.">
+                          <div class="card-body" style="background-color: #F5EBE0;">
+                              <h5 class="card-title"><%= konyvek[i].cim %></h5>
+                              <p class="card-text"><%= konyvek[i].szerzo %></p>
+                              <h4 class="card-text"><%= konyvek[i].ar %> Ft</h4>
+                              <a href="/konyv?id=<%= konyvek[i].isbn %>" class="btn btn-primary">Megnyitás</a>
+
+
+                              <form action="/kosarbarak" method="get" target="hiddenFrame" onsubmit="return handleFormSubmit(event);">
+                                <input type="hidden" name="id" value="<%= konyvek[i].isbn %>">
+                                <input type="number" name="mennyiseg" min="1" value="1" class="form-control mb-2">
+                                <button type="submit" id="kosarbagomb" class="btn btn-primary">Kosárba</button>
+                            </form>
+                            <iframe name="hiddenFrame" style="display: none;"></iframe>
+
+
+                          </div>
+                      </div>
+                  </div>
+              <% } %>
+        <% } %>
+    </div>
+  </div>
+</div>  <script src="/js/kosarpopup.js"></script>
+
+
+  
+</body>
+</html>

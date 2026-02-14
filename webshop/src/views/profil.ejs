@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="hun">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap/bootstrap.css"/>
+    <link rel="stylesheet" href="style.css"/>
+    <script src="js/jquery/jquery.js"></script>
+    <title>Könyvesbolt</title>
+</head>
+<body>
+  <%- include('./ui/fejlec.ejs') %>
+  <%- include('./ui/deleteModal.ejs') %>
+  <div class="egesz">
+    <div class="profil">
+        <img src="/img/hero/profil.jpg" alt="Profil kép" class="profilkep">
+        
+        <h2><%= user.nev %></h2>
+        <p><%= user.email %></p>
+        <p><%= user.megnevezes %></p>
+
+        <a class="btn" href="/kijelentkezes">Kijelentkezés</a>
+
+        <form method="GET" action="/profil_delete" id="deleteForm">
+            <button type="submit" name="logout" class="profiltorrles">Profil törlése</button>
+        </form>
+
+        <br>
+
+        <a class="nev" href="/adatokszerkesztese">Profil módosítása</a>
+
+    </div>
+  </div>
+
+  <div class="egesz">
+  <div class="rendelesek">
+    <h3>Korábbi rendeléseid</h3>
+<% if (rendelesek && rendelesek.length > 0) { %>
+    <% let counter = 0; %>
+    <% for (let i = 0; i < rendelesek.length; i++) { %>
+        <div class="rendeles">
+            <p><strong>Rendelés dátuma:</strong> <%= rendelesek[i].rendeles_datuma %></p>
+            <p><strong>Szállítási cím:</strong> <%= rendelesek[i].kiszallitasi_cim %></p>
+            <p><strong>Könyvek:</strong></p>
+            <ul>
+                <% for (let j = 0; j < rendelesek[i].megrendelt_konyvek.length; j++) { %>
+                    <li>
+                        <%= rendelesek[i].megrendelt_konyvek[j].ISBN %> - <%= cimek[counter] %> - 
+                        <%= rendelesek[i].megrendelt_konyvek[j].darab %> db - 
+                        <%= rendelesek[i].megrendelt_konyvek[j].darab_ar %> Ft/db - 
+                        <%= rendelesek[i].megrendelt_konyvek[j].osszar %> Ft
+                    </li>
+                    <% counter++; %>
+                <% } %>
+            </ul>
+        </div>
+    <% } %>
+<% } else { %>
+    <p>Nincsenek korábbi rendeléseid.</p>
+<% } %>
+</div>
+</div>
+
+
+<div class="egesz">
+    <div class="kivansag">
+        <h3>Kívánságlista</h3>
+        <% if (kedvenc_tomb && kedvenc_tomb.length > 0) { %>
+            <ul>
+                <% kedvenc_tomb.forEach(function(konyv) { %>
+                    <li><%= konyv %></li>
+                <% }); %>
+            </ul>
+        <% } else { %>
+            <p>Nincs semmi ezen a listán.</p>
+        <% } %>
+    </div>
+</div>
+
+
+    <script>
+        $("#deleteForm").on("submit", function(e) {
+            e.preventDefault();
+            $("#deleteModal").modal("show");
+        });
+
+        $("#confirmDeleteBtn").click(function(e) {
+            $("#deleteForm").off("submit").submit();
+        });
+    </script>
+
+</body>
+</html>

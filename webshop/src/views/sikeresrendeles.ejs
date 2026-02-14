@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="hun">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap/bootstrap.css"/>
+    <link rel="stylesheet" href="style.css"/>
+    <title>Könyvesbolt</title>
+</head>
+<body>
+        <%- include('./ui/fejlec.ejs') %>
+        <div class="kosar-container" style="background-color: #F5EBE0;">
+            <h1>Sikeres rendelés!</h1> 
+            <p>Kedves <%= user.nev %>,</p>
+            <p>Örömmel értesítjük, hogy rendelésed sikeresen feldolgozásra került.</p>
+            <h2>Megrendelt könyvek:</h2>
+            <ul><% let total = 0; %>
+                <% for(let i = 0; i < rendelesek.length; i++) { total+=rendelesek[i].darab * rendelesek[i].konyv_ar; %>
+                    <li><%= rendelesek[i].konyv_cim %> : <%= rendelesek[i].darab %> (<%= rendelesek[i].konyv_ar %> / db), Összesen: <%= rendelesek[i].darab * rendelesek[i].konyv_ar %></li>   
+                <% } %>
+            </ul>
+            <p><strong>Összegzett ár: </strong><%= total.toLocaleString('hu-HU') %> Ft</p>
+            <p><strong>Szállítási cím: </strong> <%= szallitasi_cim %></p>
+            <p>Köszönjük, hogy nálunk vásároltál, és reméljük, hogy hamarosan újra találkozunk!</p>
+            <p>Üdvözlettel,<br/>A Könyvesbolt Csapata</p>
+
+            <a href="konyveink" class="btn">Tovább böngészek</a>
+    </div>
+</body>
+</html>

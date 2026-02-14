@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="hun">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap/bootstrap.css"/>
+    <link rel="stylesheet" href="style.css"/>
+    <script src="js/jquery/jquery.js"></script>
+    <title>Könyvesbolt</title>
+</head>
+<body>
+  <%- include('./ui/fejlec.ejs') %>
+  <%- include('./ui/deleteModal.ejs') %>
+  <% if (systemMessage) { %>
+    <div class="alert alert-warning" style="color:black; text-align: center" role="alert">
+      <%= systemMessage%>
+    </div>
+  <% } %>
+
+  <div class="egesz">
+    <div class="jogmodositas">
+        <h3>Jogadás:</h3>
+        <br>
+        <form action="/jogkormodositas" method="post">
+            <select name="user_id" id="user_id">
+                <option value="">Nincs</option>
+                <%if(users.length > 0) { for(let i =0; i< users.length; i++){ %>
+                    <option value='<%= users[i].id %>''><%= users[i].email %></option>
+                <% } }%>
+            </select>
+            <select name="new_role" id="new_role">
+                <option value="1">Felhasználó</option>
+                <option value="3">Moderátor</option>
+                <option value="2">Admin</option>
+            </select>
+            <button class="btn" type="submit">Mentés</button>
+          </form>
+        </div>
+    </div>
+
+    <div class="egesz">
+        <div class="torles">
+          <h3>Felhasználó törlése:</h3>
+          <br>
+          <form action="/felhasznalotorles" method="post" id="deleteForm">
+            <select name="user_id" id="user_id">
+                <option value="">Nincs</option>
+                <%if(users.length > 0) { for(let i =0; i< users.length; i++){ %>
+                    <option value='<%= users[i].id %>''><%= users[i].email %></option>
+                <% } }%>
+            </select>
+            <button class="btn" type="submit">Törlés</button>
+          </form>
+        </div>
+    </div>
+
+    <div class="egesz">
+        <div class="adminok">
+            <h3>Adminok:</h3>
+            <br>
+            <%if(admins.length > 0) { for(let i =0; i< admins.length; i++){ %>
+                <%= admins[i].id %> -   <%= admins[i].nev %> -   <%= admins[i].email %>
+            <% } } else { %>
+                Nincs admin felhasználó!
+            <% } %>
+        </div>
+    </div>
+
+    <div class="egesz">
+        <div class="moderatorok">
+            <h3>Moderátorok:</h3>
+            <br>
+            <%if(moderators.length > 0) { for(let i =0; i< moderators.length; i++){ %>
+                <%= moderators[i].id %> -   <%= moderators[i].nev %> -   <%= moderators[i].email %>
+            <% } } else { %>
+                Nincs moderátor felhasználó!
+            <% } %>
+        </div>
+    </div>
+
+    <div class="egesz">
+        <div class="moderatorok">
+            <h3>Rendelések:</h3>
+            <br>
+            <%if(rendelesek.length > 0) { let counter = 0; for(let i =0; i< rendelesek.length; i++){ %>
+                <%= rendelesek[i].id %> - <%= rendelesek[i].felhasznalo_id %> - <%= rendelesek[i].rendeles_datuma %> - <%= rendelesek[i].kiszallitasi_cim %>
+                <br>
+                Megrendelt könyvek:
+                <br>
+                <%for(let j =0; j < rendelesek[i].megrendelt_konyvek.length; j++) {%>
+                    <%= rendelesek[i].megrendelt_konyvek[j].ISBN %> - <%= cimek[counter] %> - <%= rendelesek[i].megrendelt_konyvek[j].darab %> - <%= rendelesek[i].megrendelt_konyvek[j].darab_ar %>Ft /db - <%= rendelesek[i].megrendelt_konyvek[j].osszar %> Ft
+                <br>
+                    <% counter++;} %>
+
+                <% } } else { %>
+                Nincs rendelés!
+            <% } %>
+        </div>
+    </div>
+
+    <script>
+        $("#deleteForm").on("submit", function(e) {
+            e.preventDefault();
+            $("#deleteModal").modal("show");
+        });
+
+        $("#confirmDeleteBtn").click(function(e) {
+            $("#deleteForm").off("submit").submit();
+        });
+    </script>
+</body>
+</html>

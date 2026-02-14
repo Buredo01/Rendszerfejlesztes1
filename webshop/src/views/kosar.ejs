@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap/bootstrap.css"/>
+    <link rel="stylesheet" href="style.css"/>
+    <title>Könyvesbolt</title>
+</head>
+<body>
+  <%- include('./ui/fejlec.ejs') %>
+
+  <% if (systemMessage) { %>
+    <div class="alert alert-warning" style="color:black; text-align: center" role="alert">
+      <%= systemMessage%>
+    </div>
+  <% } %>
+
+  <div class="kosar-container" style="background-color: #F5EBE0;">
+    <h2>Kosár</h2>
+    <table class="kosar-table">
+        <thead>
+            <tr>
+                <th>Könyv Címe</th>
+                <th>Darab szám</th>
+                <th>Ár</th>
+                <th>Darabszám Módosítás</th>
+            </tr>
+        </thead>
+        <tbody>
+          <% if (kosarak.length > 0) { 
+            let total = 0;
+            %>
+            <% for (let i = 0; i < kosarak.length; i++) { 
+                let itemTotal = kosarak[i].darab * kosarak[i].konyv_ar;
+                 total += itemTotal;
+                 %>
+                <tr>
+                  <td><%= kosarak[i].konyv_cim %></td>
+                    <td><%= kosarak[i].darab %> db</td>
+                    <td><%= (kosarak[i].darab * kosarak[i].konyv_ar).toLocaleString('hu-HU') %> HUF</td>
+                    <td>
+                    <a href="/kosar_noveles?id=<%= kosarak[i].konyv_id %>" class="btn">+</a>
+                    <a href="/kosar_csokkentes?id=<%= kosarak[i].konyv_id %>" class="btn ">-</a>
+                    <a href="/kosar_torles?id=<%= kosarak[i].konyv_id %>" class="btn">Törlés</a>
+                    </td>
+                </tr>
+            <% } %>
+            <tr>
+              <td colspan="2"><strong>Összesen:</strong></td>
+              <td><strong><%= total.toLocaleString('hu-HU') %> HUF</strong></td>
+              <td></td>
+          </tr>
+        <% } else { %>
+            <tr>
+                <td colspan="4">Nincs egyetlen könyv sem a kosárban.</td>
+            </tr>
+        <% } %>
+      </tbody>
+      
+    </table>
+    <div class="kosar-button-container">
+      <form action="/rendeles" method="GET">
+        <label for="szallitasi_cim">Szállítási cím megadása: </label>
+        <input type="text" name="szallitasi_cim" id="szallitasi_cim">
+        <button class="kosar-button" type="submit">Rendelés leadása</button>
+        <a href="/konyveink" class="btn">Tovább böngészek</a>
+    </form>
+    </div>
+</div>
+
+</body>
+</html>
